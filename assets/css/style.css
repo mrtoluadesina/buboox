@@ -1,0 +1,167 @@
+/*-------------
+ 	General
+-------------*/
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html, body{
+	font: normal 16px sans-serif;
+	color: #555;
+}
+body {
+	grid-template-columns: 1fr;
+	grid-template-rows: auto;
+	grid-template-areas: 
+	"header"
+	"banner"
+	"trending";
+}
+a {
+	text-decoration: none;
+	cursor: pointer;
+	opacity: 0.9;
+	color: inherit;
+}
+.brand img {
+	max-width: 50px;
+}
+p {
+	font-size: 14px;
+}
+/* Header */
+header {
+	grid-area: header;
+	display: flex;
+	justify-content: space-between;
+	padding: 5px 5px 0;
+	background-color: #fff;
+	box-shadow: 1px 1px 3px antiquewhite;
+}
+header > nav > li {
+	display: none;
+}
+header > nav > a::after {
+	content: "=";
+	position: relative;
+	font-size: 45px;
+	color: #333;
+}
+/* Title */
+div.title-content {
+	display: flex;
+	justify-content: space-between;
+	padding: 10px;
+}
+/* Section */
+section:not(.hero){
+	padding: 10px;
+}
+/* Section Her0 */
+section.hero {
+	grid-area: banner;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 1rem;
+}
+section.hero > picture {
+	display: flex;
+	flex-basis: 100%;
+}
+section.hero > picture > img {
+	width: 100%;
+}
+@supports(object-fit: cover){
+    section.hero > picture > img{
+      width: 100%;
+      object-fit: cover;
+      object-position: center center;
+    }
+}
+/* Section Scroll */
+section.scroll {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	padding-right: 0;
+}
+section.scroll > article {
+	display: flex;
+	overflow-x: auto;
+	min-width: 100%;
+	-webkit-overflow-scrolling: touch;
+}
+section.scroll > article::-webkit-scrollbar {
+	display: none;
+  }
+section.scroll > article > .book--item {
+	position: relative;
+	margin: 0 0.5rem;
+}
+section.scroll > article > .book--item > img {
+	max-width: 5.7rem;
+	border-radius: 0.35rem;
+}
+section.scroll > article > .book--item > .label {
+	position: absolute;
+	bottom: 10%;
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+}
+section.scroll > article > .book--item > .label > span {
+	background: white;
+	padding: 5px;
+	border-radius: 0 5px 5px 0;
+	font-size: 10px;
+}
+section.scroll > article > .book--item > .label > span:last-child {
+	border-radius: 5px 0 0 5px;
+}
+/* Section cta */
+section.cta {
+	background: #fb9823;
+	display: flex;
+	justify-content: center;
+	padding: 20px 10px;
+}
+section.cta > a {
+	color: #211414;
+	font-weight: 700;
+}
+/* Section span.ctas */
+section.ctas {
+	display: flex;
+	justify-content: space-between;
+}
+section.ctas > span {
+	background: #fb9823;
+	padding: 10px;
+	border-radius: 0.5rem;
+	flex: 1 1 200px;
+	margin: 0 0.5rem;
+}
+section.ctas > span > a {
+	color: #fff;
+}
+section.ctas > span > a > h3{
+	font-size: 20px;
+	padding-bottom: 0.3rem;
+}
+/* Footer */
+footer {
+	display: flex;
+	background-color: #111;
+	color: #f5f5f5;
+	padding: 1rem;
+	justify-content: space-between
+}
+footer ul {
+	display: flex;
+	justify-content: space-around;
+	list-style-type: none;
+}
+footer ul li {
+	padding: 0 0.3rem;
+}
