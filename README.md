@@ -1,2 +1,3 @@
 # buboox
-the new web series platform
+new web series platform
+blog-like design, imagine a netflix for book reading.
